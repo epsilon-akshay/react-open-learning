@@ -94,3 +94,40 @@ object destructuring
 console.log(s,b) //prints 1 3
 ```
 [a good blog on deep refactoring](https://dmitripavlutin.com/javascript-object-destructuring/)
+
+## reference and primitive type refresher
+- primitive types are not references rather copies
+- obj and arrays are references 
+example 
+```
+let human = {name: "random name"}
+let human2 = human
+human.name = "non random name"
+human2.name = "not so non random name"
+console.log(human2)
+console.log(human)
+
+```
+when either one of the variables are changes all the references are effected
+
+Top change this in immutable way we can:
+```
+let human = {name: "random name"}
+let human2 = {...human}
+human.name = "non random name"
+console.log(human2)
+console.log(human)
+```
+## refreshing array functions 
+map()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+find()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+findIndex()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+filter()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+reduce()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
+concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
+slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+pop() => https://www.w3schools.com/jsref/jsref_pop.asp
+push() => https://www.w3schools.com/jsref/jsref_push.asp
+shift() => https://www.w3schools.com/jsref/jsref_shift.asp
+unshift() => https://www.w3schools.com/jsref/jsref_unshift.asp
