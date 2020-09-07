@@ -56,3 +56,41 @@ class message {
 	key = "hi"
 }
 `
+## spread and rest
+### spread
+One can spread an object and inject into another obj by doing this
+```
+let oldObject = {a: 1, b:2}
+let newObj = {...oldObject, c: 2}
+console.log(newObj)
+```
+
+One can also spread an array into another array by doing this
+```
+let oldObject = [1,3,3]
+let newObj = [...oldObject,2]
+console.log(newObj)
+```
+### rest 
+using the same operator one can recieve the spread argments as an array
+```
+function sortArgs(...args) {
+  return args.sort()
+}
+console.log(sortArgs(1, 3,2,9,7))
+```
+
+## Destructuring 
+array destructuring
+```
+[s,b]= [1,2,3,4]
+console.log(s,b) //prints 1 2
+[s, ,b]= [1,2,3,4]
+console.log(s,b) //prints 1 3
+```
+object destructuring
+```
+{s,b}= {s:1, b:3}
+console.log(s,b) //prints 1 3
+```
+[a good blog on deep refactoring](https://dmitripavlutin.com/javascript-object-destructuring/)
