@@ -69,3 +69,29 @@ class Age() extends Components {
 	}
 }
 ```
+- You can access content passed onto the component class/function by using props.children
+- example 
+```
+render() {
+	return(
+	<div>
+		<Age name=alu> Hi </Age>
+	</div>
+	)
+}
+
+const age = function(props) {
+render() {
+	return (
+		<div>
+		<p> Hi there im {props.name} </p>
+		<p> {prop.children}</p>
+		</div>
+	) 
+ }
+}
+
+```
+
+## understanding and working with states
+ - 
