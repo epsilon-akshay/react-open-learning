@@ -29,3 +29,7 @@
 - also dont forget to export your file using `export default function_name` and import it wherever you want to use it.
 - when we are importing we need to use snake case with upper case as starting because lower cases are reserved native html components 
 - you can now use the component you have imported by using <Component> </Component> or  <Component /> (if only child component) present
+
+## you can refer the notes till now in `references/components.pdf`
+
+## 
