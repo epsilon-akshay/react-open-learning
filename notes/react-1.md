@@ -173,4 +173,16 @@ const app = props => {
 export default app;
 
 ```
+- There are stateful and stateless components, its better to create stateless components
+- stateful components are container components
+- we will have clear logic for domain model which will be there in state full components
+- 
 
+### referencecs on references/usestate-learning-card.pdf
+
+### its a common pattern to pass a click handler as a state to child components rather than defining then in the child components, this will help in maintaniability of state. so that component would not have direct access to the state 
+### to pass arguments to handlers you can use bind , .bind(this,args) or you can wrap it around another arrow function. 
+
+### we can have 2 way binding with the child and parent class, this can be easily done by passinga  handler from the paremt class (the ahndler would react to events) and calling them n the child class
+
+### you can also add style tags as object and render them with the style property of jsx.
