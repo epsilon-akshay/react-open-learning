@@ -99,3 +99,17 @@ render() {
  - if the state changes react will re render the DOM 
  
  ### more understanding for this on /references/props&state.pdf
+
+
+ ## more states
+ - You can have event handlers onClick (C capital for jsx) 
+ - These on clikc handlers should end with handler word (convention)
+ - We should only pass a reference of the handler and not the call it, because everytime its rendered the method will be called this will cause a lot of rendering issues 
+ 
+ ### here is a txt file for which all events you can listen to: references/events.txt
+
+- make sure you use es6 function syntax(arrow functions) because this keyword would refer to the function and the state wont be accessable
+- do not change state directly, use this.setState (because we extend component class this is present) this wil assoc(merge and override) the change into the original state, 
+- REACT re-renders DOM in 2 cases, state change and prop change
+
+## 
