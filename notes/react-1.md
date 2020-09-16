@@ -112,4 +112,65 @@ render() {
 - do not change state directly, use this.setState (because we extend component class this is present) this wil assoc(merge and override) the change into the original state, 
 - REACT re-renders DOM in 2 cases, state change and prop change
 
-## 
+## Hooks 
+- we can also manage state in functional components using react hooks
+- to use state in functions , we need to import useState class and then call useState(whatever was insided state object) to init the state
+useState returns array with 2 elem one is the current state and the other is a function to call to update the state
+(similar to this.setState)
+- in react hooks its not merge and assoc it overrides the complete state
+- so we need to define only 1 property in a state and use multiple use  state calls to manage state
+- example
+```
+import React, { useState } from 'react';
+import './App.css';
+import Person from './Person/Person';
+
+const app = props => {
+  const [personsState, setPersonsState] = useState({
+    persons: [
+      { name: 'Max', age: 28 },
+      { name: 'Manu', age: 29 },
+      { name: 'Stephanie', age: 26 }
+    ]
+  });
+
+  const [otherState, setOtherState] = useState('some other value');
+
+  const switchNameHandler = () => {
+    setPersonsState({
+      persons: [
+        { name: 'Maximilian', age: 28 },
+        { name: 'Manu', age: 29 },
+        { name: 'Stephanie', age: 27 }
+      ]
+    });
+  };
+
+  return (
+    <div className="App">
+      <h1>Hi, I'm a React App</h1>
+      <p>This is really working!</p>
+      <button onClick={switchNameHandler}>Switch Name</button>
+      <Person
+        name={personsState.persons[0].name}
+        age={personsState.persons[0].age}
+      />
+      <Person
+        name={personsState.persons[1].name}
+        age={personsState.persons[1].age}
+      >
+        My Hobbies: Racing
+      </Person>
+      <Person
+        name={personsState.persons[2].name}
+        age={personsState.persons[2].age}
+      />
+    </div>
+  );
+  // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
+};
+
+export default app;
+
+```
+
