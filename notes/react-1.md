@@ -32,4 +32,40 @@
 
 ## you can refer the notes till now in `references/components.pdf`
 
-## 
+## working with components andd making it dynamic 
+- We mostly use functional component because its maintanable and reusable and configurable 
+- to use dynamic variables we need to wrap it in single curly braces. 
+example
+```
+render() {
+	return (
+		<p> Hi there im {Math.random()*30}</p>
+	) 
+}
+```
+- we can execute one line expressions in the curly braces or you could call functions that would do multiple things
+
+
+## working with props
+- There is  always one argument passed on by react to method calls which is called props
+- Props contain the argument information that is passed on, its a js object
+- example 
+```
+const age = function(props) {
+render() {
+	return (
+		<p> Hi there im {props.age}</p>
+	) 
+ }
+}
+
+//and for class based
+
+class Age() extends Components {
+	render() {
+		return (
+		<p> Hi there im {this.props.age}</p>
+	) 
+	}
+}
+```
