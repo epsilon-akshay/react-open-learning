@@ -94,4 +94,8 @@ render() {
 ```
 
 ## understanding and working with states
- - 
+ -  state has to be inside a class component
+ - 	you can define state as `state= {person: [1 ,2 ,3]}`
+ - if the state changes react will re render the DOM 
+ 
+ ### more understanding for this on /references/props&state.pdf
