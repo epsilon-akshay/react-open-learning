@@ -93,4 +93,11 @@ render(){
 - 
 
 ## debugging 
-- Go to your source code n chrome dev tools and add debugging statements s
+- Go to your source code n chrome dev tools and add debugging statements 
+- you can add react dev tools extension to chrome
+- (react 16) we can alos throw new error and catch them
+```
+throw new Error("somethign went wrong")
+
+```
+	to understand more abbout error boundaries refer: /examples/debuging 
