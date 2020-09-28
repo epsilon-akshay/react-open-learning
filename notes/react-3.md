@@ -83,4 +83,15 @@ refer examples cmp/deepdive
 - gengerally all clean up work is done here, like killing connections and all 
 - in terms o use effect function one can return a function which will be called when unmounted. it will RUN BEFORE THE MAIN USE EFFECT AND AFTER THE RENDER CYCLE
 - You can also run a clean up task in use effect by passing no second arguments hence a clean up task will be run before the use effect 
-- 
+
+## Using ShouldComponentUpdate for optimisation 
+- Lets say we have a parent compoennt with 2 children B and C, and we want a state change in A that will impact B to not re render C. 
+- in this case we will change the  ShouldComponentUpdate in C to have some checks 
+The check would be nextProp.Person !== this.Prop.Person
+Array are referenced types so we need to create a copy and then check it, its a shallow comparison hence one has to be carefull here
+- One can enable paint flashing to check what all are rendered everytime 
+- Note here is that we wont be optimising the real DOM this is just a pre rendering optimisation
+- For functioanlcomponents that might not need to update with every change in the parent component we can ues React.memo() and wrap the export (this is memoisation)
+
+- easier optimisation -
+	- If you wanna check for all props change then instead of using shouldComponentChange we can extend PureComponent, This will execute when all props change
