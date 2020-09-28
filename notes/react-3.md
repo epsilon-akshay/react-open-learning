@@ -65,7 +65,22 @@
 	- Cause sideeffects
 	- do not run an infinite loop here meaning update again
 	- Do not update state
-refer examples cs
+refer examples cmp/deepdive
 
 
+- Child components get updated and then the state component updates
 
+## functional component updates 
+- We need to use UseEffect hook in functional components 
+- It is called for ever render cycle it takes in a function and executes that function 
+- generally you run your http requests in useEffect and when udes with useState then can have access to state
+- inoder tyo control for when the state changes then you acn pass in a second argument that will decide when to change the state, its an array which takes all the props that is meantfor change or state.
+- to run only once during the created time then we can pass an empty array which will tell that it has no dependencies and it should rerun when every one of dependencies chagnes so this is possible when the prop is updated once. 
+- so it will run like component did mount 
+
+## clean up hooks 
+- using classes we ill call component will unmount (), there where the component disappears then we will be calling teh function 
+- gengerally all clean up work is done here, like killing connections and all 
+- in terms o use effect function one can return a function which will be called when unmounted. it will RUN BEFORE THE MAIN USE EFFECT AND AFTER THE RENDER CYCLE
+- You can also run a clean up task in use effect by passing no second arguments hence a clean up task will be run before the use effect 
+- 
